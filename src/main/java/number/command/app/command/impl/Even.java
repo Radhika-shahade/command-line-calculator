@@ -11,10 +11,9 @@ public class Even implements Command, CommandValidator {
         // even or odd 1 2 3 4 5 6
         if (validate(numbers)) {
             for (int i = 1; i < numbers.length; i++) {
-                double currentNum = Double.valueOf(numbers[i]);
-                boolean res = findEvenOrOdd(currentNum);
+                boolean res = findEvenOrOdd(Double.valueOf(numbers[i]));
                 if (res) {
-                    System.out.println("number is even "+ currentNum);
+                    System.out.println("number is even "+ res);
                 }
             }
             return Result.builder().message("even number result is displayed").build();
@@ -34,7 +33,7 @@ public class Even implements Command, CommandValidator {
     public boolean validate(String[] attributes) throws Exception {
         if(!(attributes.length>2))
         {
-            throw new Exception(" To calculate Even Or Odd required at least one numbers");
+            throw new Exception(" To calculate Even number required at least one numbers");
         }
         return true;
     }
