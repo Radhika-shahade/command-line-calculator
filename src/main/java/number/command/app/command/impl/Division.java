@@ -8,12 +8,12 @@ public class Division implements Command, CommandValidator {
     @Override
     public Result execute(String[] numbers) throws Exception {
         //div 45 4
-        Double div = Double.parseDouble(numbers[1]);
-      if(validate(numbers))
+        if(validate(numbers))
       {
+          double div = Double.parseDouble(numbers[1]);
          for(int i=2;i<numbers.length;i++)
          {
-            Double num = Double.parseDouble(numbers[i]);
+            double num = Double.parseDouble(numbers[i]);
             div /= num ;
          }
           return Result.builder().message("Division of given numbers is: ").value(div).build();
