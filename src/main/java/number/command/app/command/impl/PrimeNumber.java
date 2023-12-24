@@ -9,7 +9,7 @@ public class PrimeNumber implements Command, CommandValidator {
     public Result execute(String[] numbers) throws Exception {
         if (validate(numbers)) {
             for (int i = 1; i < numbers.length; i++) {
-                Double num = Double.valueOf(numbers[1]);
+                double num = Double.valueOf(numbers[1]);
                boolean result = isPrimeNumber(num);
                 if (result) {
                     System.out.println(num + "is palindrome number");
@@ -23,7 +23,7 @@ public class PrimeNumber implements Command, CommandValidator {
         }
 
 
-    private boolean isPrimeNumber(Double num) {
+    private boolean isPrimeNumber(double num) {
         for (int i = 2; i * i <= num; i++) {
             if (num % i == 0) {
                 return false; // Number is divisible, not a prime number

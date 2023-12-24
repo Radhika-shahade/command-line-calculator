@@ -10,9 +10,8 @@ public class Factorial implements Command, CommandValidator {
     public Result execute(String[] numbers) throws Exception {
         if (validate(numbers)) {
             for (int i = 1; i < numbers.length; i++) {
-                double num = Double.valueOf(numbers[i]);
-                double fact = calculateFactorial(num);
-                System.out.println("Factorial of " + num + " is " + fact);
+                double fact = calculateFactorial( Double.valueOf(numbers[i]));
+                System.out.println("Factorial of " + fact + " is " + fact);
             }
 
             return Result.builder().message("Factorials calculated successfully.").build();
@@ -22,7 +21,7 @@ public class Factorial implements Command, CommandValidator {
     }
 
     private double calculateFactorial(double num) {
-        Double fact =1.0;
+        double fact =1.0;
         while(num!=1)
         {
             fact *= num;

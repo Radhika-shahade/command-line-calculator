@@ -7,7 +7,7 @@ import number.command.app.model.Result;
 public class Subtraction implements Command, CommandValidator {
     @Override
     public Result execute(String[] numbers) throws Exception {
-        Double sub = Double.valueOf(numbers[1]);
+        double sub = Double.valueOf(numbers[1]);
         if (validate(numbers)) {
             for (int i = 2; i < numbers.length; i++) {
                 int num = Integer.valueOf(numbers[i]);
@@ -22,7 +22,7 @@ public class Subtraction implements Command, CommandValidator {
     public boolean validate(String[] attributes) throws Exception {
         if(!(attributes.length>2))
         {
-            throw new Exception(" subtraction required two numbers");
+            throw new Exception(" subtraction required at least two numbers");
         }
         return true;
     }

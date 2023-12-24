@@ -9,8 +9,8 @@ public class Square implements CommandValidator, Command {
     public Result execute(String[] numbers) throws Exception {
         if (validate(numbers)) {
             for (int i = 1; i < numbers.length; i++) {
-                Double num = Double.valueOf(numbers[1]);
-                Double result = calculateSquare(num);
+                double num = Double.valueOf(numbers[1]);
+                double result = calculateSquare(num);
                 System.out.println(result + "is square of number"+num);
                 }
             return Result.builder().message("square is calculated ").build();
@@ -27,7 +27,7 @@ public class Square implements CommandValidator, Command {
     public boolean validate(String[] attributes) throws Exception {
         if(!(attributes.length>1))
         {
-            throw new Exception(" sqaure required at least one numbers");
+            throw new Exception(" to find sqaure required at least one number");
         }
         return true;
     }

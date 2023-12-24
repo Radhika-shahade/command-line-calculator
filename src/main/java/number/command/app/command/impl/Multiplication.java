@@ -7,11 +7,10 @@ import number.command.app.model.Result;
 public class Multiplication implements Command, CommandValidator {
     @Override
     public Result execute(String[] numbers) throws Exception {
-        Double mul = 1.0;
+        double mul = 1.0;
         if (validate(numbers)) {
             for (int i = 1; i < numbers.length; i++) {
-                String currentNumber = numbers[i];
-                Double number = Double.parseDouble(currentNumber);
+                Double number = Double.parseDouble( numbers[i]);
                 mul *= number;
             }
             return Result.builder().message("Multiplication of given numbers is: ").value(mul).build();

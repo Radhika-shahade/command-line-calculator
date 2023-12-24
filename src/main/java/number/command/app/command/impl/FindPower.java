@@ -10,10 +10,9 @@ public class FindPower implements Command,CommandValidator {
     public Result execute(String[] numbers) throws Exception {
 
         if (validate(numbers)) {
-                double num = Double.valueOf(numbers[1]);
             double index = Double.valueOf(numbers[2]);
-                double power = calculatePower(num, index);
-                System.out.println("power of " + num + " is " + power);
+                double power = calculatePower(Double.valueOf(numbers[1]), index);
+                System.out.println("power of " + power + " is " + power);
             return Result.builder().message("power calculated successfully.").build();
             }
 
@@ -22,7 +21,7 @@ public class FindPower implements Command,CommandValidator {
 
 
     private double calculatePower(double num, double index) {
-        Double result=1.0;
+        double result=1.0;
         while (index!=0) {
           result *= num;
           index--;

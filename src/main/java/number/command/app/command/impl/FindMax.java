@@ -8,7 +8,7 @@ public class FindMax implements Command, CommandValidator {
     @Override
     public Result execute(String[] numbers) throws Exception {
         if (validate(numbers)) {
-                Double result = findMax(numbers);
+            double result = findMax(numbers);
             return Result.builder().message(" maximum number is: ").value(result).build();
             }
             return Result.builder().message("invalid attribute").build();
@@ -16,7 +16,6 @@ public class FindMax implements Command, CommandValidator {
 
     private Double findMax(String[] numbers) {
         double max = Double.parseDouble(numbers[1]); // max 12 a 4 5
-
         for (int i = 2; i < numbers.length; i++) {
             double currentNumber = Double.parseDouble(numbers[i]);
             if (currentNumber > max) {
