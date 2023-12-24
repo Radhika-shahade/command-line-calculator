@@ -11,7 +11,7 @@ public class Square implements CommandValidator, Command {
             for (int i = 1; i < numbers.length; i++) {
                 double num = Double.valueOf(numbers[1]);
                 double result = calculateSquare(num);
-                System.out.println(result + "is square of number"+num);
+                System.out.println(result + " is square of number "+num);
                 }
             return Result.builder().message("square is calculated ").build();
             }

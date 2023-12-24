@@ -33,7 +33,7 @@ public class Factorial implements Command, CommandValidator {
 
     @Override
     public boolean validate(String[] attributes) throws Exception {
-        if(!(attributes.length>2))
+        if(!(attributes.length>1))
         {
             throw new Exception(" To calculate factorial required at least one numbers");
         }

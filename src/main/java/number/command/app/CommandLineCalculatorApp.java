@@ -7,16 +7,31 @@ import number.command.app.model.Result;
 import java.util.Scanner;
 
 public class CommandLineCalculatorApp {
+
     public static void main(String[] args) {
+        System.out.println("Welcome to Command Line Calculator!");
+        System.out.println("-------------------------------------------------------------------------------------------------");
+        System.out.println("You are free to enter any command!");
+        System.out.println("To add number: ex add 2 3 4");
+        System.out.println("To subtract number ex: sub 2 3 4");
+        System.out.println("To Multiply number ex: mul 2 3 4");
+        System.out.println("To Divide number ex: div 2 3 4");
+        System.out.println("To Find Factorial  ex: fact 2 3 4");
+        System.out.println("To find palindrome number ex: palindrome 2 3 4");
+        System.out.println("To Find Prime Number ex: prime 2 3 4");
+        System.out.println("To Find power ex: pow 2 3 ");
+        System.out.println("To Find square ex: square 2 3 4");
+        System.out.println("To Find square ex: square 2 3 4");
+        System.out.println("To Find even number ex: even 2 3 4");
+        System.out.println("To Find odd number ex: odd 2 3 4");
+        System.out.println("To Find average ex: avg 2 3 4");
         while (true) {
 
             Scanner sc = new Scanner(System.in);
 
-            System.out.println("======================= Bootcoding Command Utility =================");
-            System.out.println("To perform addition of integer numbers, command should be like ::: add 12 354 545 5");
-            System.out.println("======================= Bootcoding Command Utility =================");
-
-            System.out.println("You are free to enter any command!");
+            System.out.println("-------------------------------------------------------------------------------------------------");
+            System.out.println("Enter command");
+            System.out.println("-------------------------------------------------------------------------------------------------");
 
             String commandStr = sc.nextLine();
 
@@ -24,7 +39,7 @@ public class CommandLineCalculatorApp {
 
             Command command = findCommand(commandWithAttrs[0]);
             if(command == null) {
-                System.err.println("Enter valid Command with proper arguments!");
+                System.err.println("Enter valid Command");
                 continue;
             }
             try {
@@ -40,7 +55,7 @@ public class CommandLineCalculatorApp {
         return switch (cmd) {
             case "add" -> new Addition();
             case "sub" -> new Subtraction();
-            case "multi" -> new Multiplication();
+            case "mul" -> new Multiplication();
             case "div" -> new Division();
             case "fact" -> new Factorial();
             case "palindrome" -> new Palindrome();

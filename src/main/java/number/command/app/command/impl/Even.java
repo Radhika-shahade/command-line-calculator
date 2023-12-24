@@ -13,7 +13,7 @@ public class Even implements Command, CommandValidator {
             for (int i = 1; i < numbers.length; i++) {
                 boolean res = findEvenOrOdd(Double.valueOf(numbers[i]));
                 if (res) {
-                    System.out.println("number is even "+ res);
+                    System.out.println(Double.valueOf(numbers[i])+" number is even "+ res);
                 }
             }
             return Result.builder().message("even number result is displayed").build();
